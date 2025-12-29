@@ -18,5 +18,32 @@
   <p><a href="index.html">← Back to Home</a></p>
 </main>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Fade in page on load
+  document.body.style.opacity = 0;
+  document.body.style.transition = "opacity 0.4s ease-in";
+  requestAnimationFrame(() => {
+    document.body.style.opacity = 1;
+  });
+});
+
+// Fade out before navigating to another page
+document.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    
+    // Only fade out for internal page links
+    if (!href.startsWith("#") && !href.startsWith("http")) {
+      e.preventDefault();
+      document.body.style.opacity = 0;
+      setTimeout(() => {
+        window.location.href = href;
+      }, 400); // matches the fade duration
+    }
+  });
+});
+</script>
+
 </body>
 </html>
