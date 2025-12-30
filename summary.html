@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Summary</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+
+<div id="progress-bar"></div>
+
+<body>
+  <div id="progress-bar"></div>
+
+  <nav class="home-nav">
+  <a class="nav-link" href="index.html">Home</a>
+  <a class="nav-link" href="education.html">Education</a>
+  <a class="nav-link" href="skills.html">Skills</a>
+  <a class="nav-link" href="projects.html">Projects</a>
+  <a class="nav-link" href="other.html">Other Info</a>
+  <a class="nav-link active" href="summary.html">Summary</a>
+  <a class="nav-link" href="contact.html">Contact</a>
+</nav>
+
+  <header class="site-header">
+    <h1>Summary</h1>
+  </header>
+
+  <main class="section-content">
+    <div class="project-card">
+    <p>I am a B.Tech undergraduate at NIT Srinagar with a strong interest in
+      computer science, software development, and data-driven problem solving.</p>
+</div>
+
+<div class="project-card">
+  <p> I enjoy learning independently, building practical projects, and
+      understanding systems deeply rather than memorizing surface-level details.</p>
+</div>
+
+ 
+  </main>
+
+  <footer class="site-footer">
+  <div class="theme-toggle">
+    <label class="toggle-switch">
+      <input type="checkbox" id="theme-toggle">
+      <span class="slider"></span>
+    </label>
+  </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Fade in page on load
+  document.body.style.opacity = 0;
+  document.body.style.transition = "opacity 0.4s ease-in";
+  requestAnimationFrame(() => {
+    document.body.style.opacity = 1;
+  });
+});
+
+// Fade out before navigating to another page
+document.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    
+    // Only fade out for internal page links
+    if (!href.startsWith("#") && !href.startsWith("http")) {
+      e.preventDefault();
+      document.body.style.opacity = 0;
+      setTimeout(() => {
+        window.location.href = href;
+      }, 400); // matches the fade duration
+    }
+  });
+});
+</script>
+
+</body>
+</html>

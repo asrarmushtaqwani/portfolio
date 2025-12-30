@@ -1,0 +1,105 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asrar Mushtaq Wani | Portfolio</title>
+  <meta name="description" content="Portfolio of Asrar Mushtaq Wani, B.Tech undergraduate with interest in software, data, and technology.">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+
+<div id="progress-bar"></div>
+
+<body>
+
+<header class="site-header">
+  <h1>Hello, I’m Asrar Mushtaq Wani</h1>
+  <p class="tagline" id="typed"></p>
+
+   
+    Discover more about me below.
+  </p>
+</header>
+
+<nav class="home-nav">
+  <a class="nav-link active" href="index.html">Home</a>
+  <a class="nav-link" href="education.html">Education</a>
+  <a class="nav-link" href="skills.html">Skills</a>
+  <a class="nav-link" href="projects.html">Projects</a>
+  <a class="nav-link" href="other.html">Other Info</a>
+  <a class="nav-link" href="summary.html">Summary</a>
+  <a class="nav-link" href="contact.html">Contact</a>
+</nav>
+
+<footer class="site-footer">
+  <a class="resume-link" href="resume/Asrar_Mushtaq_Wani_Resume.pdf" download>
+    Download Resume (PDF)
+  </a>
+  <div class="theme-toggle">
+    <label class="toggle-switch">
+      <input type="checkbox" id="theme-toggle">
+      <span class="slider"></span>
+    </label>
+  </div>
+</footer>
+
+</body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asrar Mushtaq Wani Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>Asrar Mushtaq Wani</h1>
+    <p class="tagline">B.Tech Metallurgy Undergraduate · Software & Data Enthusiast</p>
+  </header>
+
+<nav class="home-nav">
+  <a href="summary.html">Summary</a>
+  <a href="skills.html">Skills</a>
+  <a href="projects.html">Projects</a>
+  <a href="education.html">Education</a>
+  <a href="contact.html">Contact</a>
+  <a href="other.html">Other Info</a>
+</nav>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Fade in page on load
+  document.body.style.opacity = 0;
+  document.body.style.transition = "opacity 0.4s ease-in";
+  requestAnimationFrame(() => {
+    document.body.style.opacity = 1;
+  });
+});
+
+// Fade out before navigating to another page
+document.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    
+    // Only fade out for internal page links
+    if (!href.startsWith("#") && !href.startsWith("http")) {
+      e.preventDefault();
+      document.body.style.opacity = 0;
+      setTimeout(() => {
+        window.location.href = href;
+      }, 400); // matches the fade duration
+    }
+  });
+});
+</script>
+
+
+</body>
+</html>
+>>>>>>> f57b69473b2bf79c5b4de0e443a265cbede32b3f
